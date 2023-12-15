@@ -1,0 +1,40 @@
+---
+import "@/styles/globals.css";
+import Layout from "../layouts/Layout.astro";
+import Main from "../components/Main.tsx";
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <h1 class="text-primary">
+      <span class="text-gradient">Astroplate</span>
+    </h1>
+    <Main />
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+</style>
