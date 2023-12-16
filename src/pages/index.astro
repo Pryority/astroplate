@@ -1,24 +1,96 @@
 ---
 import "@/styles/globals.css";
 import Layout from "../layouts/Layout.astro";
-import Main from "../components/Main.tsx";
+import Section from "@/components/Section.astro";
+import SkillsSection from "@/components/sections/skills";
+import Navbar from "@/components/Navbar";
+import { Button } from "@/components/ui/button";
+import { WEBSITE } from "@/lib/constants";
 ---
+
+<script is:inline>
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+  const isDark = getThemePreference() === "dark";
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+  if (typeof localStorage !== "undefined") {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
+</script>
 
 <Layout title="Welcome to Astro.">
   <main>
-    <h1 class="text-primary">
-      <span class="text-gradient">Astroplate</span>
-    </h1>
-    <Main />
+    <div
+      class="snap-y snap-mandatory md:snap-proximity overflow-y-scroll h-screen flex flex-col items-center relative gap-40"
+    >
+      <Navbar client:load />
+      <div class="flex flex-col max-w-xl gap-4 md:-translate-x-64 p-4 -mt-24">
+        <h1 class="capitalize">Welcome to {WEBSITE.name}</h1>
+        <p class="text-center">
+          {WEBSITE.description}
+        </p>
+        <Button>Get in Touch</Button>
+      </div>
+      <Section
+        title="Skills"
+        content="React, JavaScript, HTML, CSS, etc."
+        bannerImageUrl="https://binarapps.com/wp-content/uploads/2021/09/Top-10-Programming-Languages-of-the-Future.png"
+      >
+        <!-- <SkillsSection /> -->
+      </Section>
+
+      <Section
+        title="Experience"
+        content="Software Engineer at XYZ Company, Full Stack Developer at ABC Inc., etc."
+        bannerImageUrl="https://picsum.photos/400"
+      />
+
+      <Section
+        title="About Me"
+        content="I am a passionate and dedicated software developer with a strong foundation in front-end and back-end technologies."
+        bannerImageUrl="https://picsum.photos/400"
+      />
+
+      <Section
+        title="Frameworks Used"
+        content="React, Angular, Express, Django, etc."
+        bannerImageUrl="https://picsum.photos/400"
+      />
+
+      <Section
+        title="Programming Languages Used"
+        content="JavaScript, Python, Java, TypeScript, etc."
+        bannerImageUrl="https://picsum.photos/400"
+      />
+
+      <Section
+        title="Projects"
+        content={"Project 1"}
+        bannerImageUrl="https://picsum.photos/400"
+      />
+      <footer class="snap-start min-h-[33vh]"><p>Hello footer</p></footer>
+    </div>
   </main>
 </Layout>
 
 <style>
   main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
+    margin: 0px;
+    padding: 0px;
     color: white;
     font-size: 20px;
     line-height: 1.6;
