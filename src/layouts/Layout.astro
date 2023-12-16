@@ -16,26 +16,13 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="bg-transparent">
+  <body class="bg-background">
     <slot />
   </body>
 </html>
 <style is:global>
-  :root {
-    --accent: 50, 205, 50; /* Lime Green */
-    --accent-light: 173, 255, 47; /* Lighter Lime Green */
-    --accent-dark: 34, 139, 34; /* Darker Lime Green */
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-  }
-
   html {
     font-family: system-ui, sans-serif;
-    background: #13151a;
     background-size: 224px;
   }
   code {
