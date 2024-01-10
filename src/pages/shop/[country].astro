@@ -38,14 +38,11 @@ const { meals } = selectedCountry;
   <PageHeader title={`${country}`}>
     <main class="flex flex-col items-center">
       <div
-        class="flex flex-wrap max-w-3xl lg:max-w-4xl xl:max-w-6xl justify-center gap-4"
+        class="grid sm:grid-cols-2 md:flex flex-wrap md:max-w-3xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-6xl justify-center gap-4"
       >
         {
           meals.map((meal: Meal) => (
-            <Card
-              key={meal.idMeal}
-              className="flex-1 sm:max-w-[66svw] sm:min-w-[256px] lg:min-w-[16svw] lg:max-w-[33svw]"
-            >
+            <Card key={meal.idMeal} className="flex-1 md:min-w-fit">
               <CardHeader>
                 <CardTitle className="whitespace-nowrap">
                   {meal.strMeal}
