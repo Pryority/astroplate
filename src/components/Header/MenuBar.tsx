@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import ModeToggle from "@/components/Header/ModeToggle";
 import WEBSITE from "@/lib/constants";
-import NavMenuItem from "./NavMenuItem";
+import NavDropdownItem from "./NavDropdownItem";
 
 export const MenuBar = () => {
   return (
@@ -25,19 +25,17 @@ export const MenuBar = () => {
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>
-            <a href="/shop">Shop</a>
-          </NavigationMenuTrigger>
+          <NavigationMenuTrigger>Shop</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[256px] ">
               {WEBSITE.countries.map((country) => (
-                <NavMenuItem
+                <NavDropdownItem
                   key={country.name}
-                  title={country.name}
                   href={`/shop/${country.name.toLowerCase()}`}
+                  title={country.name}
                 >
                   {country.description}
-                </NavMenuItem>
+                </NavDropdownItem>
               ))}
             </ul>
           </NavigationMenuContent>

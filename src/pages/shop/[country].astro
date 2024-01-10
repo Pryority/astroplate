@@ -37,12 +37,14 @@ const { meals } = selectedCountry;
 <ROOT title={`Astroplate - Shop > ${country}`}>
   <PageHeader title={`${country}`}>
     <main class="flex flex-col items-center">
-      <div class="flex flex-wrap max-w-3xl lg:max-w-4xl justify-center gap-4">
+      <div
+        class="flex flex-wrap max-w-3xl lg:max-w-4xl xl:max-w-6xl justify-center gap-4"
+      >
         {
           meals.map((meal: Meal) => (
             <Card
               key={meal.idMeal}
-              className="flex-1 sm:max-w-[66svw] sm:min-w-[256px] lg:max-w-[33svw]"
+              className="flex-1 sm:max-w-[66svw] sm:min-w-[256px] lg:min-w-[16svw] lg:max-w-[33svw]"
             >
               <CardHeader>
                 <CardTitle className="whitespace-nowrap">
