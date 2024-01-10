@@ -156,6 +156,54 @@ const WEBSITE = {
         },
       ],
     },
+    {
+      name: "United States",
+      code: "USD",
+      thumbnail:
+        "https://www.themealdb.com/images/media/meals/svuvrq1511557186.jpg",
+      meals: [
+        {
+          strMeal: "Hamburger",
+          strMealThumb:
+            "https://www.themealdb.com/images/media/meals/sxysrt1468240488.jpg",
+          idMeal: "52874",
+          description: "Classic American burger",
+          price: 7.99,
+        },
+        {
+          strMeal: "Hot Dog",
+          strMealThumb:
+            "https://www.themealdb.com/images/media/meals/uwxusv1511819847.jpg",
+          idMeal: "52892",
+          description: "Iconic American hot dog",
+          price: 4.99,
+        },
+        {
+          strMeal: "Pancakes",
+          strMealThumb:
+            "https://www.themealdb.com/images/media/meals/rwuyqx1511383174.jpg",
+          idMeal: "52848",
+          description: "Fluffy American pancakes",
+          price: 6.49,
+        },
+        {
+          strMeal: "Fried Chicken",
+          strMealThumb:
+            "https://www.themealdb.com/images/media/meals/uvuyxu1503067369.jpg",
+          idMeal: "52960",
+          description: "Crispy American fried chicken",
+          price: 8.99,
+        },
+        {
+          strMeal: "Mac 'n' Cheese",
+          strMealThumb:
+            "https://www.themealdb.com/images/media/meals/uquqtu1511383216.jpg",
+          idMeal: "52961",
+          description: "Creamy American mac 'n' cheese",
+          price: 5.49,
+        },
+      ],
+    },
   ] as Country[],
 };
 

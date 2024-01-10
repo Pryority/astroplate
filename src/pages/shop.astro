@@ -21,7 +21,7 @@ import WEBSITE, { type Country } from "@/lib/constants";
         {
           WEBSITE.countries.map((c: Country) => (
             <Card className="flex-1 sm:max-w-[66svw] sm:min-w-[256px] lg:max-w-[33svw]">
-              <CardHeader>
+              <CardHeader className="flex flex-row justify-between">
                 <CardTitle className="whitespace-nowrap">{c.name}</CardTitle>
                 <CardDescription className="whitespace-nowrap">
                   {c.code}
@@ -29,6 +29,11 @@ import WEBSITE, { type Country } from "@/lib/constants";
               </CardHeader>
               <CardContent>
                 <p class="min-w-[156px]">{c.meals.length} Meals</p>
+                <img
+                  src={c.thumbnail}
+                  alt="Country Image"
+                  class="object-cover max-h-[256px] rounded-md mt-4"
+                />
               </CardContent>
               <CardFooter className="justify-end">
                 <Button variant={"outline"}>View Menu</Button>
@@ -39,7 +44,4 @@ import WEBSITE, { type Country } from "@/lib/constants";
       </div>
     </main>
   </PageHeader>
-  <div class="fixed bottom-0 p-4 py-8 bg-primary/10 flex w-full justify-end">
-    <CartDrawer client:load />
-  </div>
 </ROOT>
