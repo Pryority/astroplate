@@ -1,0 +1,14 @@
+---
+import { WEBSITE } from "@/lib/constants";
+import MenuBar from "@/components/Header/MenuBar";
+import MobileMenuBar from "@/components/Header/MobileMenuBar";
+---
+
+<div class="flex w-full snap-start justify-between gap-4 p-4 pt-8">
+  <p class="text-3xl tracking-tighter text-primary">
+    <strong><a href="/">{WEBSITE.name}</a></strong>
+  </p>
+
+  <MenuBar client:visible />
+  <MobileMenuBar client:visible />
+</div>
