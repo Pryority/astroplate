@@ -28,7 +28,7 @@ import WEBSITE, { type Country } from "@/lib/constants";
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p class="min-w-[156px]">{c.totalMeals} Meals</p>
+                <p class="min-w-[156px]">{c.meals.length} Meals</p>
               </CardContent>
               <CardFooter className="justify-end">
                 <Button variant={"outline"}>View Menu</Button>
@@ -39,4 +39,7 @@ import WEBSITE, { type Country } from "@/lib/constants";
       </div>
     </main>
   </PageHeader>
+  <div class="fixed bottom-0 p-4 py-8 bg-primary/10 flex w-full justify-end">
+    <CartDrawer client:load />
+  </div>
 </ROOT>

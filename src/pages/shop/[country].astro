@@ -1,0 +1,75 @@
+---
+import CartDrawer from "@/components/CartDrawer";
+import { Button } from "@/components/ui/button";
+import ROOT from "@/layouts/Root.astro";
+import PageHeader from "@/layouts/PageHeader.astro";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { PlusIcon, ShoppingCartIcon } from "lucide-react";
+import WEBSITE, { type Meal } from "@/lib/constants";
+
+export const generateCountryPaths = () => {
+  const countries = WEBSITE.countries;
+  const paths = countries.map((c) => ({
+    params: { country: c.name.toLowerCase() },
+  }));
+  return paths;
+};
+
+export async function getStaticPaths() {
+  return generateCountryPaths();
+}
+
+const { country } = Astro.params;
+const selectedCountry = WEBSITE.countries.find(
+  (c) => country.toLowerCase() === c.name.toLowerCase(),
+);
+if (!selectedCountry) return Astro.redirect("/404");
+const { meals } = selectedCountry;
+---
+
+<ROOT title={`Astroplate - Shop > ${country}`}>
+  <PageHeader title={`${country}`}>
+    <main class="flex flex-col items-center">
+      <div class="flex flex-wrap max-w-3xl lg:max-w-4xl justify-center gap-4">
+        {
+          meals.map((meal: Meal) => (
+            <Card
+              key={meal.idMeal}
+              className="flex-1 sm:max-w-[66svw] sm:min-w-[256px] lg:max-w-[33svw]"
+            >
+              <CardHeader>
+                <CardTitle className="whitespace-nowrap">
+                  {meal.strMeal}
+                </CardTitle>
+                <CardDescription className="whitespace-nowrap">
+                  ${meal.price}
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="">
+                <p class="min-w-[156px]">{meal.description}</p>
+              </CardContent>
+              <CardFooter className="justify-end">
+                <Button variant={"outline"}>
+                  <PlusIcon className="h-4 w-4 text-primary" />
+                  <ShoppingCartIcon className="h-4 w-4 text-primary font-bold" />
+                </Button>
+              </CardFooter>
+            </Card>
+          ))
+        }
+      </div>
+    </main>
+  </PageHeader>
+  <div
+    class="fixed bottom-0 p-4 py-8 bg-primary/30 backdrop-blur-lg flex w-full justify-end"
+  >
+    <CartDrawer client:load />
+  </div>
+</ROOT>
