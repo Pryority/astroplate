@@ -1,10 +1,13 @@
 ---
 import { CardWithForm } from "@/components/CardWithForm";
+import PageHeader from "@/layouts/PageHeader.astro";
 import ROOT from "@/layouts/Root.astro";
 ---
 
 <ROOT title="Astroplate - Home">
-  <main class="flex flex-col items-center h-screen justify-center">
-    <CardWithForm client:load />
-  </main>
+  <PageHeader title="Cool Home Text">
+    <main class="flex flex-col items-center min-h-[50svh] justify-center">
+      <CardWithForm client:load />
+    </main>
+  </PageHeader>
 </ROOT>

@@ -2,8 +2,14 @@
 // import { createClient } from "@libsql/client";
 
 // dotenv.config();
+export interface Country {
+  name: string;
+  code: string;
+  thumbnail: string;
+  totalMeals: number;
+}
 
-export const WEBSITE = {
+const WEBSITE = {
   name: "Astroplate",
   description:
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui nam quas numquam molestias laborum blanditiis!",
@@ -29,8 +35,18 @@ export const WEBSITE = {
       },
     ],
   },
+  countries: [
+    {
+      name: "Canada",
+      code: "CAD",
+      thumbnail:
+        "https://www.themealdb.com/images/media/meals/ryppsv1511815505.jpg",
+      totalMeals: 13,
+    },
+  ] as Country[],
 };
 
+export default WEBSITE;
 // export const DATABASE_URL = process.env.TURSO_DB_URL!;
 // export const DATABASE_TOKEN = process.env.TURSO_DB_AUTH_TOKEN;
 // export const ENVIRONMENT = process.env.NODE_ENV;

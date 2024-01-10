@@ -1,12 +1,42 @@
 ---
-import { Button } from "@/components/ui/button";
 import CartDrawer from "@/components/CartDrawer";
+import { Button } from "@/components/ui/button";
 import ROOT from "@/layouts/Root.astro";
+import PageHeader from "@/layouts/PageHeader.astro";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import WEBSITE, { type Country } from "@/lib/constants";
 ---
 
 <ROOT title="Astroplate - Shop">
-  <main class="flex flex-col items-center h-screen justify-center">
-    <h1>Shop</h1>
-    <CartDrawer client:load />
-  </main>
+  <PageHeader title="Shop">
+    <main class="flex flex-col items-center">
+      <div class="flex flex-wrap max-w-3xl lg:max-w-4xl justify-center gap-4">
+        {
+          WEBSITE.countries.map((c: Country) => (
+            <Card className="flex-1 sm:max-w-[66svw] sm:min-w-[256px] lg:max-w-[33svw]">
+              <CardHeader>
+                <CardTitle className="whitespace-nowrap">{c.name}</CardTitle>
+                <CardDescription className="whitespace-nowrap">
+                  {c.code}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p class="min-w-[156px]">{c.totalMeals} Meals</p>
+              </CardContent>
+              <CardFooter className="justify-end">
+                <Button variant={"outline"}>View Menu</Button>
+              </CardFooter>
+            </Card>
+          ))
+        }
+      </div>
+    </main>
+  </PageHeader>
 </ROOT>

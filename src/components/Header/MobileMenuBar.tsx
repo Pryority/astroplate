@@ -12,11 +12,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { ModeToggle } from "@/components/Header/ModeToggle";
+import ModeToggle from "@/components/Header/ModeToggle";
+import WEBSITE from "@/lib/constants";
 
-type Props = {};
-
-const MobileMenuBar = (props: Props) => {
+const MobileMenuBar = () => {
   return (
     <div className="relative flex items-center md:hidden">
       <Sheet>
@@ -39,24 +38,21 @@ const MobileMenuBar = (props: Props) => {
               <a href="/">Home</a>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionTrigger>
-                <a href="/shop">Shop</a>
-              </AccordionTrigger>
+              <AccordionTrigger>Shop</AccordionTrigger>
               <AccordionContent className="text-left">
-                <a href="/shop/frying">Frying Oil Mangement</a>
+                <a href={`/shop`}>All Countries</a>
               </AccordionContent>
-              <AccordionContent className="text-left">
-                <a href="/shop/marine">Marine Hardware</a>
-              </AccordionContent>
-              <AccordionContent className="text-left">
-                <a href="/shop/plumbing">Plumbing Hardware</a>
-              </AccordionContent>
+              {WEBSITE.countries.map((c) => (
+                <AccordionContent className="text-left">
+                  <a href={`/shop/${c.name.toLowerCase()}`}>{c.name}</a>
+                </AccordionContent>
+              ))}
             </AccordionItem>
             <AccordionItem
               value="item-4"
               className="py-4 text-start font-medium"
             >
-              <a href="/blog">Blog</a>
+              <a href="/about">About</a>
             </AccordionItem>
             <AccordionItem
               value="item-5"
