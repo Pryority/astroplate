@@ -27,7 +27,7 @@ export const MenuBar = () => {
         <NavigationMenuItem>
           <NavigationMenuTrigger>Shop</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[256px] ">
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[256px]">
               {WEBSITE.countries.map((country) => (
                 <NavDropdownItem
                   key={country.name}

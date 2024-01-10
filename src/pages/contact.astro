@@ -1,12 +1,13 @@
 ---
-import { Button } from "@/components/ui/button";
-import CartDrawer from "@/components/CartDrawer";
 import ROOT from "@/layouts/Root.astro";
 import PageHeader from "@/layouts/PageHeader.astro";
+import { ContactCard } from "@/components/ContactCard";
 ---
 
 <ROOT title="Astroplate - Contact">
   <PageHeader title="Contact">
-    <main class="flex flex-col items-center h-screen justify-center"></main>
+    <main class="flex flex-col items-center min-h-[50svh] justify-center">
+      <ContactCard client:load />
+    </main>
   </PageHeader>
 </ROOT>
