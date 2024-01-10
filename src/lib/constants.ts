@@ -14,6 +14,7 @@ export interface Country {
   code: string;
   thumbnail: string;
   meals: Meal[];
+  description: string;
 }
 
 const WEBSITE = {
@@ -155,54 +156,82 @@ const WEBSITE = {
           price: 8.49,
         },
       ],
+      description:
+        "Diverse Canadian cuisine, known for poutine and sweet treats, reflects a multicultural food landscape with local flair.",
     },
     {
       name: "United States",
       code: "USD",
       thumbnail:
-        "https://www.themealdb.com/images/media/meals/svuvrq1511557186.jpg",
+        "https://www.themealdb.com/images/media/meals/urzj1d1587670726.jpg",
       meals: [
         {
-          strMeal: "Hamburger",
+          strMeal: "Banana Pancakes",
           strMealThumb:
-            "https://www.themealdb.com/images/media/meals/sxysrt1468240488.jpg",
-          idMeal: "52874",
-          description: "Classic American burger",
-          price: 7.99,
+            "https://www.themealdb.com/images/media/meals/sywswr1511383814.jpg",
+          idMeal: "52855",
+          description: "Delicious banana-flavored pancakes",
+          price: 6.99, // Made-up price
         },
         {
-          strMeal: "Hot Dog",
+          strMeal: "BBQ Pork Sloppy Joes",
           strMealThumb:
-            "https://www.themealdb.com/images/media/meals/uwxusv1511819847.jpg",
-          idMeal: "52892",
-          description: "Iconic American hot dog",
-          price: 4.99,
+            "https://www.themealdb.com/images/media/meals/atd5sh1583188467.jpg",
+          idMeal: "52995",
+          description: "Tasty BBQ pork sloppy joes",
+          price: 8.49,
         },
         {
-          strMeal: "Pancakes",
+          strMeal: "Beef Brisket Pot Roast",
           strMealThumb:
-            "https://www.themealdb.com/images/media/meals/rwuyqx1511383174.jpg",
-          idMeal: "52848",
-          description: "Fluffy American pancakes",
-          price: 6.49,
+            "https://www.themealdb.com/images/media/meals/ursuup1487348423.jpg",
+          idMeal: "52812",
+          description: "Hearty beef brisket pot roast",
+          price: 10.99,
         },
         {
-          strMeal: "Fried Chicken",
+          strMeal: "Big Mac",
           strMealThumb:
-            "https://www.themealdb.com/images/media/meals/uvuyxu1503067369.jpg",
-          idMeal: "52960",
-          description: "Crispy American fried chicken",
+            "https://www.themealdb.com/images/media/meals/urzj1d1587670726.jpg",
+          idMeal: "53013",
+          description: "Iconic Big Mac burger",
+          price: 9.99,
+        },
+        {
+          strMeal: "Chick-Fil-A Sandwich",
+          strMealThumb:
+            "https://www.themealdb.com/images/media/meals/sbx7n71587673021.jpg",
+          idMeal: "53016",
+          description: "Classic Chick-Fil-A sandwich",
+          price: 7.49,
+        },
+        {
+          strMeal: "Chicken Fajita Mac and Cheese",
+          strMealThumb:
+            "https://www.themealdb.com/images/media/meals/qrqywr1503066605.jpg",
+          idMeal: "52818",
+          description: "Savory chicken fajita mac and cheese",
           price: 8.99,
         },
         {
-          strMeal: "Mac 'n' Cheese",
+          strMeal: "Choc Chip Pecan Pie",
           strMealThumb:
-            "https://www.themealdb.com/images/media/meals/uquqtu1511383216.jpg",
-          idMeal: "52961",
-          description: "Creamy American mac 'n' cheese",
-          price: 5.49,
+            "https://www.themealdb.com/images/media/meals/rqvwxt1511384809.jpg",
+          idMeal: "52856",
+          description: "Delicious chocolate chip pecan pie",
+          price: 5.99,
+        },
+        {
+          strMeal: "Chocolate Raspberry Brownies",
+          strMealThumb:
+            "https://www.themealdb.com/images/media/meals/yypvst1511386427.jpg",
+          idMeal: "52860",
+          description: "Rich chocolate raspberry brownies",
+          price: 6.49,
         },
       ],
+      description:
+        "American food culture, ranging from Southern barbecue to clam chowder, represents a diverse blend of traditions and innovations.",
     },
   ] as Country[],
 };

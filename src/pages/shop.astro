@@ -29,11 +29,13 @@ import WEBSITE, { type Country } from "@/lib/constants";
               </CardHeader>
               <CardContent>
                 <p class="min-w-[156px]">{c.meals.length} Meals</p>
-                <img
-                  src={c.thumbnail}
-                  alt="Country Image"
-                  class="object-cover max-h-[256px] rounded-md mt-4"
-                />
+                <div class="relative flex w-full items-center justify-center">
+                  <img
+                    src={c.thumbnail}
+                    alt="Country Image"
+                    class="object-cover aspect-square rounded-md mt-4"
+                  />
+                </div>
               </CardContent>
               <CardFooter className="justify-end">
                 <Button variant={"outline"}>View Menu</Button>

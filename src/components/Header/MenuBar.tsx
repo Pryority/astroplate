@@ -30,13 +30,13 @@ export const MenuBar = () => {
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[256px] ">
-              {WEBSITE.header.shop.map((component) => (
+              {WEBSITE.countries.map((country) => (
                 <NavMenuItem
-                  key={component.title}
-                  title={component.title}
-                  href={component.href}
+                  key={country.name}
+                  title={country.name}
+                  href={`/shop/${country.name.toLowerCase()}`}
                 >
-                  {component.description}
+                  {country.description}
                 </NavMenuItem>
               ))}
             </ul>
