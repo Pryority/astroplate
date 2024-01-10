@@ -1,0 +1,12 @@
+---
+import { Button } from "@/components/ui/button";
+import CartDrawer from "@/components/CartDrawer";
+import ROOT from "@/layouts/Root.astro";
+---
+
+<ROOT title="Astroplate - Shop">
+  <main class="flex flex-col items-center h-screen justify-center">
+    <h1>Shop</h1>
+    <CartDrawer client:load />
+  </main>
+</ROOT>
