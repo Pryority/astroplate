@@ -43,7 +43,7 @@ const MobileMenuBar = () => {
                 <a href={`/shop`}>All Countries</a>
               </AccordionContent>
               {WEBSITE.countries.map((c) => (
-                <AccordionContent className="text-left">
+                <AccordionContent key={c.name} className="text-left">
                   <a href={`/shop/${c.name.toLowerCase()}`}>{c.name}</a>
                 </AccordionContent>
               ))}
