@@ -3,6 +3,8 @@
 An Astro template that uses shadcn/ui.
 
 ![Astroplate Demo Image](./public/astroplate-demo.png)
+![Astroplate iPad Mockup](./public/astroplate-ipad-mockup.png)
+![Astroplate iPhone Mockup](./public/astroplate-iphone-mockup.png)
 
 ## 🚀 Project Structure
 
